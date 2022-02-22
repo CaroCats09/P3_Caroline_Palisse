@@ -1,0 +1,12 @@
+@import "./utils/variable";
+@import "./utils/mixins";
+@import "./base/reset";
+@import "./components/load";
+@import "./layout/footer";
+@import "./layout/header";
+@import "./pages/index/search";
+@import "./pages/index/entete";
+@import "./pages/index/fonctionnement";
+@import "./pages/index/restaurants";
+@import "./pages/index/heart";
+@import "./pages/restaurants/_menu";

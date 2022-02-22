@@ -1,0 +1,24 @@
+.bloc-titre {
+    height: 50px;
+    width: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+
+    .logo-noir {
+        font-family: "shrikhand";
+        font-size: 40px;
+        height: 50px;
+        width: auto;
+        margin: 0px;
+        position: relative;
+    }
+    .icone-fleche {
+        color: black;
+        font-size: 20px;
+        width: 80px;
+        position: absolute;
+        left: 40px;
+    }
+}
