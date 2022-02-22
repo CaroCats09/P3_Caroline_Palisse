@@ -1,0 +1,47 @@
+.fonctionnement {
+   height: auto;
+
+   .elements {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .element {
+         background-color: $colour-background;
+         border-radius: 20px;
+         width: 240px;
+         padding: 20px;
+         margin: 15px;
+         box-shadow: 3px 3px 3px $colour-shadow;
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: center;
+         &:hover {
+            background-color: #cbaeee;
+            box-shadow: 6px 6px 6px $colour-hover-shadow;
+            .icone {
+               color: $colour-primary;
+            }
+         }
+         .numero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            margin-left: -30px;
+            border-radius: 50%;
+            color: white;
+            background-color: $colour-primary;
+         }
+         .icone {
+            color: black;
+         }
+         .texte {
+            font-weight: bold;
+         }
+      }
+   }
+}

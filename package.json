@@ -1,0 +1,14 @@
+{
+  "name": "p3",
+  "version": "1.0.0",
+  "description": "oh my food",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/index.scss:./css/index.css"
+  },
+  "author": "Caroline Palisse",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.45.1"
+  }
+}

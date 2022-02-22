@@ -1,0 +1,43 @@
+.icone-coeur {
+    .fa-heart {
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+    }
+    .far {
+        z-index: 2;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+        &:hover {
+            opacity: 0;
+            + .fas {
+                opacity: 1;
+                animation: heartFull 0.5s linear forwards;
+            }
+        }
+    }
+    .fas {
+        background: -moz-linear-gradient(top, $colour-secondary 0%, $colour-primary 100%);
+        background: -webkit-linear-gradient(top, $colour-secondary 0%, $colour-primary 100%);
+        background: linear-gradient(to bottom, $colour-secondary 0%, $colour-primary 100%);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        z-index: 1;
+        opacity: 0;
+        transform-origin: bottom;
+        transform: scale(1);
+        animation: transform 0.5s cubic-bezier(0.5, 0.2, 1, 0.5);
+    }
+}
+
+@keyframes heartFull {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

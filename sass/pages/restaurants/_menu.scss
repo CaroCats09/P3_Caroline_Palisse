@@ -1,0 +1,195 @@
+.restaurant {
+    max-width: 100%;
+    position: relative;
+
+    figure {
+        display: flex;
+        justify-content: center;
+        margin: 0px;
+        width: 100%;
+        height: 250px;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: $colour-background;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        position: relative;
+        margin-top: -40px;
+
+        .resto-coeur {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: auto;
+            padding: 20px;
+            height: 70px;
+
+            .nom-resto {
+                width: auto;
+                font-family: "shrikhand";
+                font-size: 25px;
+            }
+            .icone-heart {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .fa-heart {
+                    font-size: 24px;
+                    position: absolute;
+                    right: 20px;
+                }
+                .far {
+                    z-index: 2;
+                    opacity: 1;
+                    transition: opacity 0.5s ease-in-out;
+                    &:hover {
+                        opacity: 0;
+                        + .fas {
+                            opacity: 1;
+                            animation: heartFull 0.5s linear forwards;
+                        }
+                    }
+                }
+                .fas {
+                    background: -moz-linear-gradient(top, $colour-secondary 0%, $colour-primary 100%);
+                    background: -webkit-linear-gradient(top, $colour-secondary 0%, $colour-primary 100%);
+                    background: linear-gradient(to bottom, $colour-secondary 0%, $colour-primary 100%);
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    z-index: 1;
+                    opacity: 0;
+                    transform-origin: bottom;
+                    transform: scale(1);
+                    animation: transform 0.5s cubic-bezier(0.5, 0.2, 1, 0.5);
+                }
+            }
+        }
+        @keyframes heartFull {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .titre {
+            width: auto;
+            padding: 20px;
+            h5 {
+                font-size: 16px;
+                width: 40px;
+                border-bottom: $colour-tertiary 3px solid;
+                display: flex;
+                align-self: flex-start;
+            }
+        }
+        .cards {
+            width: auto;
+            padding: 20px;
+            transform: scaleY(1);
+            animation-name: card-moov;
+            animation-duration: 3s;
+
+            @keyframes card-moov {
+                0% {
+                    transform: scaleY(0);
+                }
+                100% {
+                    transform: scaleY(1);
+                }
+            }
+
+            .carte {
+                text-decoration: none;
+                color: black;
+                height: 100%;
+                width: 100%;
+                background-color: white;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: row;
+                box-shadow: 3px 3px 3px $colour-shadow;
+                overflow: hidden;
+                .plat {
+                    height: 60px;
+                    width: auto;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    margin: 10px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    h6 {
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                    .detail-plat {
+                        font-size: 14px;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                }
+
+                .prix {
+                    width: 70px;
+                    font-weight: bold;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    margin-bottom: 15px;
+                }
+                .check {
+                    background-color: $colour-tertiary;
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 75px;
+                    margin-right: -75px;
+                    transition-duration: 1s;
+                    .fa-check-circle {
+                        color: white;
+                    }
+                }
+                &:hover > .check {
+                    margin-right: 0px;
+                }
+                &:hover .fa-check-circle {
+                    transition: all 0.3s 0.3s;
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+}
+@keyframes checkFull {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
