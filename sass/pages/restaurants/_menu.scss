@@ -108,16 +108,8 @@
             @keyframes card-moov {
                 0% {
                     transform: scaleY(0);
-                } /*
-                25% {
-                    transform: scaleY(0.2);
                 }
-                50% {
-                    transform: scaleY(0.5);
-                }
-                75% {
-                    transform: scaleY(0.8);
-                }*/
+
                 100% {
                     transform: scaleY(1);
                 }
